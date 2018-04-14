@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="articleViewModel"
+            type="com.factory.mobile.architecturedemoapp.viewmodel.ItemArticleViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/item_article"
+        android:padding="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/articleName"
+            android:textStyle="bold"
+            android:text="@{articleViewModel.articleName}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/articleDescription"
+            android:text="@{articleViewModel.articleDescription}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/articleSource"
+            android:layout_marginTop="3dp"
+            android:gravity="end"
+            android:text="@{articleViewModel.articleSource}"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/article_separator_color"
+            android:layout_marginBottom="3dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+    </LinearLayout>
+</layout>

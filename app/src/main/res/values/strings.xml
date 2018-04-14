@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DemoApp-MVVM-RX-Databinding-Kotlin-Retrofit</string>
+
+    <string name="login_hint">Login</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="sign_in_button_text">Sign in</string>
+    <string name="error_news">Error</string>
+</resources>

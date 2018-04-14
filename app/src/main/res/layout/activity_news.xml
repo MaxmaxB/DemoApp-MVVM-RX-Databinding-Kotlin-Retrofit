@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragments.eventsList.EventsListFragment">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="newsViewModel"
+            type="com.factory.mobile.architecturedemoapp.viewmodel.NewsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/progress_bar_color"
+            android:visibility="@{newsViewModel.isLoading ? View.VISIBLE : View.GONE}"/>
+
+        <TextView
+            android:id="@+id/label_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/error_news"
+            android:visibility="@{newsViewModel.error ? View.VISIBLE : View.GONE}"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/news_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="false"
+            android:visibility="@{newsViewModel.isLoading ? View.GONE : View.VISIBLE}" />
+    </LinearLayout>
+</layout>
