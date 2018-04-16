@@ -42,10 +42,12 @@ class NewsActivity : AppCompatActivity() {
     }
 
     private fun loadData(){
-        newsViewModel.loadData("le-monde")
-        newsViewModel.articlesList.observe(this, Observer{
-            handleResponse(ArrayList(it))
-        } )
+        with(newsViewModel){
+            loadData("le-monde")
+            articlesList.observe(this@NewsActivity, Observer{
+                handleResponse(ArrayList(it))
+            } )
+        }
     }
 
     private fun handleResponse(articlesList : ArrayList<Article>) {

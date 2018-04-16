@@ -33,5 +33,4 @@ class NewsViewModel : ViewModel(){
             }
         })
     }
-
 }
