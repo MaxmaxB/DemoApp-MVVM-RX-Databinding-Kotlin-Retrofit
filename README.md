@@ -7,3 +7,4 @@
 * Retrofit
 * JUnit Test
 * MVMM Architecture
+![Alt Text](demo-app-gif.gif)
